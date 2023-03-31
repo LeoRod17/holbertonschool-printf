@@ -22,6 +22,11 @@ int prints(va_list s)
 	int i;
 
 	character = va_arg(s, char *);
+	if (character == NULL)
+	{
+		i = write(1, "(null)", 6);
+		return (i);
+	}
 	for (i = 0; character[i] != '\0'; i++)
 	{
 		_putchar(character[i]);
@@ -48,7 +53,7 @@ int printmod(va_list m)
  */
 int auxlist(char x, va_list list)
 {
-	int j = 0, count;
+	int j = 0, count = 0;
 	ope op[] = {
 	{'c', printc},
 	{'s', prints},
@@ -62,6 +67,7 @@ int auxlist(char x, va_list list)
 		{
 			count = op[j].func(list);
 		}
+
 		j++;
 	}
 return (count);
@@ -75,7 +81,7 @@ return (count);
 int _printf(const char *format, ...)
 {
 	va_list list;
-	int i = 0, count = 0;
+	int i = 0, count = 0, aux = 0;
 
 	if (format == NULL)
 		return (-1);
@@ -92,7 +98,13 @@ int _printf(const char *format, ...)
 			if (format[i + 1] == '\0')
 				return (-1);
 
-			count += auxlist(format[i + 1], list);
+			aux = auxlist(format[i + 1], list);
+			if (aux == 0)
+			{				
+				i--;
+				aux += _putchar(format[i - 1]);
+			}
+			count += aux;
 			i++;
 		}
 		i++;
