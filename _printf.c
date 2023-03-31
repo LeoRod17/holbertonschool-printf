@@ -84,14 +84,15 @@ int _printf(const char *format, ...)
 	while (format[i] != '\0')
 	{
 		if (format[i] != '%')
-			_putchar(format[i]);
+			count += _putchar(format[i]);
+
 
 		if (format[i] == '%')
 		{
 			if (format[i + 1] == '\0')
 				return (-1);
 
-			count = auxlist(format[i + 1], list);
+			count += auxlist(format[i + 1], list);
 			i++;
 		}
 		i++;
