@@ -88,7 +88,7 @@ int _printf(const char *format, ...)
 
 		if (format[i] == '%')
 		{
-			if (format[i + 1] == NULL)
+			if (format[i + 1] == '\0')
 				return (-1);
 
 			count = auxlist(format[i + 1], list);
