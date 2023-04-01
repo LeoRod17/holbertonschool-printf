@@ -100,9 +100,9 @@ int _printf(const char *format, ...)
 
 			aux = auxlist(format[i + 1], list);
 			if (aux == 0)
-			{				
+			{
 				i--;
-				aux += _putchar(format[i - 1]);
+				aux += _putchar(format[i + 1]);
 			}
 			count += aux;
 			i++;
