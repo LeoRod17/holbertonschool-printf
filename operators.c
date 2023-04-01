@@ -12,13 +12,17 @@ char *converter(int num, int base)
 	char *hex = "0123456789abcdef";
 	char *p;
 	char arr[64];
-	int rest = 0, i;
+	int rest = 0, i, neg = 0;
 
 	if (num == 0)
 	{
 		return ("0");
 	}
-
+	if (num < 0 && base == 10)
+	{
+		num = -num;
+		neg = 1;
+	}
 	for (i = 0; i < 64; i++)
 	{
 		arr[i] = '0';
@@ -31,6 +35,8 @@ char *converter(int num, int base)
 		*--p = hex[rest];
 		num = num / base;
 	}
+	if (neg)
+		*--p = '-';
 	return (p);
 }
 
@@ -45,12 +51,18 @@ int printd(va_list d)
 	int i, a;
 	char *r;
 
-	if (d == NULL)
-		return (-1);
-
 	a = va_arg(d, int);
+	if (a == INT_MIN)
+	{
+		r = "-2147483648";
+		for (i = 0; r[i]; i++)
+		{
+			_putchar(r[i]);
+		}
+		return (i);
+	}
 	r = converter(a, 10);
-	for (i = 0; r[i] != '0'; i++)
+	for (i = 0; r[i]; i++)
 	{
 		_putchar(r[i]);
 	}
