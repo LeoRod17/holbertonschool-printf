@@ -22,5 +22,7 @@ int printc(va_list);
 int prints(va_list);
 int printmod(va_list);
 int auxlist(char x, va_list list);
+char *converter(int num, int base);
+int printd (va_list);
 
 #endif

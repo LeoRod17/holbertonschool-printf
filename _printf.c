@@ -58,6 +58,8 @@ int auxlist(char x, va_list list)
 	{'c', printc},
 	{'s', prints},
 	{'%', printmod},
+	{'d', printd},
+	{'i', printd},
 	{0, NULL},
 	};
 
