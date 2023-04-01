@@ -9,9 +9,9 @@
 
 char *converter(int num, int base)
 {
-	char *hex = "0123456789abcdef";
-	char *p;
-	char arr[64];
+	static char *hex = "0123456789abcdef";
+	static char *p;
+	static char arr[64];
 	int rest = 0, i, neg = 0;
 
 	if (num == 0)
@@ -35,7 +35,7 @@ char *converter(int num, int base)
 		*--p = hex[rest];
 		num = num / base;
 	}
-	if (neg)
+	if (neg == 1)
 		*--p = '-';
 	return (p);
 }
