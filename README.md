@@ -30,7 +30,7 @@ Betty coding style.
 You call the function by writing ____printf() later you can choose what to print with the symbol % and then you write what you want to print. It can also print even without the % symbol.
 syntax _printf(format, "argument");
 
-example 1:
+example 1:  
 `_printf("Welcome to the code");`  
 It will print: Welcome to the code
 
