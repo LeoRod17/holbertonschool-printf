@@ -13,17 +13,17 @@ Betty coding style.
 
 
 ## Functions
-* printc
+* printc  
    A function that prints a unique character.
-* prints
+* prints  
    A function that prints a string.
-* printd
+* printd  
    A function that prints an int.
-* printmod
+* printmod  
    A function that prints a % after the command. 
-* converter
+* converter  
    A function that converts a string of numbers into any base of numbers. We use it for decimal but it can be used to convert the numbers to binary or another base.
-* auxlist
+* auxlist  
    A function that is used to check which format the user is using and choose the correct print function, for example: %d uses printd.
 
 ## How to use:
