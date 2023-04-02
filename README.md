@@ -8,9 +8,9 @@ We have an error but we do not know what it is because all of test did not have 
 Betty coding style.
 
 ## Flow chart
-\
 
-\
+![](https://github.com/Mvigil6343/holbertonschool-printf/blob/master/_printf%20flowchart.png)
+
 
 ## Functions
 * printc
