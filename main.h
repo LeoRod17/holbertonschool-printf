@@ -6,10 +6,11 @@
 #include <limits.h>
 #include <unistd.h>
 int _putchar(char c);
+
 /**
- * operations - a struct to save the format of the characters
- * @fr: the character who will define the function to use
- * @func: a pointer to the specific print function
+ *struct operations - a struct to save the format of the characters
+ *@fr: the character who will define the function to use
+ *@func: a pointer to the specific print function
  */
 typedef struct operations
 {
@@ -23,6 +24,6 @@ int prints(va_list);
 int printmod(va_list);
 int auxlist(char x, va_list list);
 char *converter(int num, int base);
-int printd (va_list);
+int printd(va_list);
 
 #endif
