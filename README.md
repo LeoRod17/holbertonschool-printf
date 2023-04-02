@@ -1,4 +1,4 @@
-# _**__printf********_____**
+# _**__printf**
 This proyect point is our own version of the printf function that we use in c.
 
 ## Build Status
@@ -31,7 +31,7 @@ You call the function by writing ____printf() later you can choose what to print
 syntax _printf(format, "argument");
 
 example 1:
-`_printf("Welcome to the code");`
+`_printf("Welcome to the code");`  
 It will print: Welcome to the code
 
 example 2:
